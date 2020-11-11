@@ -1008,13 +1008,16 @@ def tasks_browse(short_name, page=1):
     def respond():
         per_page = 10
         offset = (page - 1) * per_page
+        print(page)
+        print(offset)
+        print(per_page)
         count = ps.n_tasks
         page_tasks = cached_projects.browse_tasks(project.get('id'), per_page, offset)
         if not page_tasks and page != 1:
             abort(404)
 
         pagination = Pagination(page, per_page, count)
-
+        print(pagination)
         project_sanitized, owner_sanitized = sanitize_project_owner(project,
                                                                     owner,
                                                                     current_user,
