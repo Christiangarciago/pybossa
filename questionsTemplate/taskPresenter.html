@@ -1,0 +1,1719 @@
+<style>
+
+    body {
+        margin-top: 60px;
+        padding-top: 0px !important;
+    }
+
+    h3{
+        font-size: 22px;
+    }
+
+    p{
+        font-weight: 200;
+        font-size: 16px;
+    }
+
+    .green {
+        color: rgba(164, 31, 27, 1);
+    }
+
+    .dark-color, .dark-title {color: black;}
+
+    .secondnav {
+        position: fixed;
+        top: 0px;
+        z-index: 999;
+        background-color: rgba(255, 221, 24, 1);
+        width: 100%;
+        height: 60px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .fa-funnel {
+        font-size: 24px !important;
+        color: rgba(0,0,0,0.6);
+    }
+
+    .secondnav.step2 {
+        background-color: rgba(255, 209, 49, 1);
+    }
+
+    .secondnav.step3 {
+        background-color: rgba(250, 204, 107, 1);
+    }
+
+    .secondnav.step4 {
+        background-color: rgba(250, 204, 107, 1);
+    }
+
+
+    .navbar-brand {
+        padding: 17px 15px;
+        width: 0;
+    }
+
+    .navbar-info-btn {
+        position: absolute;
+        top: 19px;
+        float: right;
+        margin-left: 92%;
+    }
+
+    .btn-tutorial {
+        background: white;
+        color: black;
+        text-transform: uppercase;
+        width: 100%;
+        height: 45px;
+        padding-top: 11px;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    .help-full {
+        display: none;
+        position: absolute;
+        top: 0;
+        background-color: rgba(255, 209, 49, 1);
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 99999999999999999999999999999;
+        color: black !important;
+    }
+
+    .help2-1 h4,
+    .help2-2 h4{
+    font-size: 13px;
+    font-style: italic;
+    }
+
+    .help2-1 ul,
+    .help2-2 ul {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .help2-1 ul > li,
+    .help2-2 ul > li {
+        margin-bottom: 8px;
+    }
+
+
+
+
+    .swiper-container {
+        width: 100%;
+        border: 1px solid grey;
+        margin-top: 0px;
+    }
+
+    @media(min-width: 768px) {
+        .swiper-container {
+            margin-top: 35px;
+        }
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+
+    .swiper-pagination-bullet {
+        margin: 2px;
+        background: #9ba9b0;
+        display: none;  /* hide the pagination bullet for now */
+    }
+    .swiper-pagination-bullet-active {
+        background: #546E7A;
+    }
+    /*.btn-group-answer-bottom {
+        border-top: 1px solid #9ba9b0;
+        bottom:0;
+        width:100%;
+        background: white;
+        margin-right: 0px;
+        margin-left: 0px;
+        position: fixed;
+        z-index: 1;
+        min-height: 100px;
+    }*/
+
+    .btn-group-answer-bottom.mini {
+        min-height: 0px;
+    }
+    .btn-group-answer-bottom button {
+        padding-left: 0;
+        padding-right: 0;
+        height: 50px;
+    }
+
+    .btn-group-answer-bottom .col-xs-6 button,
+    .btn-group-answer-bottom .col-xs-4 button {
+        padding-left: 0px;
+        padding-right: 0px;
+        min-height: 60px;
+    }
+
+    .btn-group-answer-bottom .left {
+        border-right: 1px solid #9ba9b0;
+    }
+
+    .btn-white {
+        background: white;
+        margin-top: 0;
+        color: black !important;
+        border: 0px !important;
+        margin-bottom: 0px;
+    }
+
+    .btn-white:active,
+    .btn-white:focus,
+    .btn-white:hover {
+        background: white;
+        box-shadow: none;
+        outline: none !important;
+    }
+
+    .no-margin {
+        margin: 0;
+    }
+
+    .btn-extra-step {
+        display: inline-block;
+        background-color: #E9E9E9;
+        border-radius: 0px;
+        color: black !important;
+        height: 40px;
+    }
+
+    .btn-xlarge {
+        padding: 18px 28px;
+        font-size: 22px; /*change this to your desired size*/
+        line-height: normal;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+                border-radius: 8px;
+    }
+
+    .btn-success {
+        color:#fff;
+        background-color:#5cb85c;
+        border-color:#4cae4c
+    }
+    
+    .btn-success:hover {
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+
+    .btn-success:active:hover, 
+    .btn-success:active:focus, 
+    .btn-success:active.focus, 
+    .btn-success.active:hover, 
+    .btn-success.active:focus, 
+    .btn-success.active.focus, 
+    .open > .btn-success.dropdown-toggle:hover, 
+    .open > .btn-success.dropdown-toggle:focus, 
+    .open > .btn-success.dropdown-toggle.focus {
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+
+    .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle{
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+
+    .btn-success:focus, .btn-success.focus {
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;  
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #286090;
+        border-color: #204d74;
+    }
+
+    .btnRespuestas{
+        margin-top: 15px;
+        /*margin-bottom: 15px;*/
+    }
+
+    .btn{
+        font-size:17px;
+        padding: 15px 15px;
+    }
+
+    #stage {
+        display: none;
+        border: 1px solid #9ba9b0;
+    }
+    .step-icon {
+        min-height: 130px !important;
+    }
+
+    @media (min-width: 768px) {
+        #stage {
+            margin-top: 35px;
+        }
+    }
+
+    .close-icon {
+        position:relative;
+        background: rgba(0,0,0,0.5);
+        color: white;
+        z-index:999;
+        padding-top: 4px;
+        padding-bottom: 2px;
+        border-radius: 5px;
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+
+    .step1,
+    .step2,
+    .step3,
+    .step3.tiger,
+    .step3.yellow,
+    .step4,
+    .step5,
+    .step6,
+    .step7 {
+        display:none;
+    }
+
+    .zoom-info {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .mobileHoverFix:hover,
+    .mobileHoverFix.hover,
+    .mobileHoverFix:focus,
+    .mobileHoverFix.focus{
+        color: #546e7b;
+    }
+
+    #question {
+        display: flex;
+        justify-content: space-around;
+        width: 250px;
+    }
+
+    #question h4 {
+        font-size: 16px;
+        color: black;
+        /* margin-top: 16px; */
+    }
+
+    .help-full{
+        display: none;
+        position: absolute;
+        top: 0;
+        background-color: rgba(255, 209, 49, 1);
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 99999999999999999999999999999;
+        color: white;
+    }
+    .help-full p {
+        color: black;
+    }
+
+    .non-readable {
+        width: 100%;
+        position: fixed;
+        bottom: 60px;
+    }
+    .non-readable a {
+        font-size: 12px;
+    }
+
+    .bodyparts {
+        text-align: center;
+    }
+
+    .bodyparts > img {
+        display: inline-block;
+    }
+
+    .btn-answer,
+    .btn-white {
+        width: 100%;
+    }
+
+    .min-20 {
+        min-height: 40px;
+    }
+
+    .btn-block-2 {
+        margin-top: 1px !important;
+    }
+
+    .tutorial-img {
+        width: 98px;
+    }
+
+    .tutorial-img.step3,
+    .tutorial-img.step4 {
+        margin-top: 2%;
+    }
+
+    .leftwhite {
+        border-right: 1px solid white;
+    }
+
+    .col-xs-6.nomargins {
+        padding: 0;
+    }
+
+
+    @media(max-width: 320px) {
+        .help2-1 ul, .help2-2 ul {
+            font-size: 14px;
+        }
+
+        .btn-group-answer-bottom {
+            min-height: 0px;
+        }
+        .tutorial-img {
+            width: 50px;
+        }
+        .tutorial-img.step3,
+        .tutorial-img.step4 {
+            width: 75px;
+            margin-top: 2%;
+        }
+        .step-icon {
+            min-height: 0px !important;
+        }
+
+        .btn-group-answer-bottom button.small {
+            height: 80px;
+        }
+
+        .btn-extra-step {
+            height: 30px !important;
+        }
+
+        .btn-group-answer-bottom .col-xs-6 button,
+        .btn-group-answer-bottom .col-xs-4 button{
+            min-height: 30px;
+        }
+
+        .col-xs-6.nomargins {
+            padding: 0;
+        }
+    }
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<link rel="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.16.0/ol.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.16.0/ol.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<div>
+    <div id="help1container" class="container help-full help1">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-4 col-md-4 text-center">
+                <h2>Mosquito Alert</h2>
+                <img src="http://i.imgur.com/1MY0zqo.png" style="height:130px;">
+                <h3 id="i18n_question1" class="dark-color">¿Ves un mosquito en esta foto?</h3>
+                <p id="i18n_easy_right">Parece fácil, ¿verdad?</p>
+                <p id="i18n_tellme">Pues dinos si ves un mosquito.</p>
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <a id="help1" href="#" class="btn btn-tutorial">
+                    <span id="i18n_letsgo">¡Vamos allá!</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="help2container" class="container help-full help2">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-4 col-md-4 text-center">
+                <h2>Mosquito Alert</h2>
+                <img src="http://i.imgur.com/hYdlg8M.png" style="height:130px;">
+                <h3 id="i18n_whatmosquito" class="dark-title">¿Qué mosquito es?</h3>
+                <p id="i18n_wesearch">Buscamos mosquitos tigre o mosquitos de la fiebre amarilla, pero se pueden colar otras especies</p>
+                <p id="i18n_nextscreen">En la pantalla siguiente te explicamos cómo reconocerlos.</p>
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <a id="help2" href="#" class="btn btn-tutorial">
+                    <span id="i18n_ok">¡Vale!</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="help2-1container" class="container help-full help2-1">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-4 col-md-4 text-center">
+                <h2>Mosquito Alert</h2>
+                <h3 id="i18n_tiger" class="dark-color">Mosquito Tigre</h3>
+                <h4>(Aedes albopictus)</h4>
+                <ul>
+                    <li id="i18n_whitestripes">Es pequeño (< 1 cm), negro y con rayas blancas horizontales en el abodmen.</li>
+                    <li id="i18n_whitelinehead">Tiene una línea blanca vertical en cabeza y tórax.</li>
+                    <li id="i18n_stripedlegs">Patas rayadas.</li>
+                </ul>
+                <h3 id="i18n_examples">Ejemplos</h3>
+                <div class="row">
+                
+                    <div class="col-xs-6">
+                        <img class="tutorial-img" src="http://i.imgur.com/PHPuc8l.png">
+                        <p id="i18n_thorax">Tórax</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <img class="tutorial-img" src="http://i.imgur.com/8uccfud.png">
+                        <p id="i18n_abdomen">Abdomen</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <a id="help2-1" href="#" class="btn btn-tutorial">
+                    <span id="i18n_ok2">¡OK!</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="help2-2container" class="container help-full help2-2">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-4 col-md-4 text-center">
+                <h2>Mosquito Alert</h2>
+                <h3 id="i18n_yellowfever" class="dark-color">Mosquito de Fiebre Amarilla</h3>
+                <h4>(Aedes aegypti)</h4>
+                <ul>
+                    <li id="i18n_smallblackish">Es pequeño (< 1 cm), marrón negruzco y con rayas horizontales, blancas y anchas en el abdomen. A cada lado de estas líneas tiene manchas blancas redondas.</li>
+                    <li id="i18n_patternchest">Tiene un dibujo en forma de lira en el tórax.</li>
+                    <li id="i18n_stripedlegs2">Patas rayadas.</li>
+                </ul>
+                <h3 id="i18n_examples2">Ejemplos</h3>
+                <div class="row">
+                
+                    <div class="col-xs-6">
+                        <img class="tutorial-img" src="http://i.imgur.com/hZlv8lr.png">
+                        <p id="i18n_thorax2">Tórax</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <img class="tutorial-img" src="http://i.imgur.com/9gkaHlD.png">
+                        <p id="i18n_abdomen2">Abdomen</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <a id="help2-2" href="#" class="btn btn-tutorial">
+                    <span id="i18n_ok3">¡OK!</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="help3container" class="container help-full help3">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-4 col-md-4 text-center">
+                <h3 id="i18n_whichparts" class="dark-color">¿Por qué partes lo has reconocido?</h3>
+                <p id="i18n_markparts">La parte más identificativa del mosquito es el dibujo del tórax. ¿Reconoces el dibujo en la imagen?</p>
+                <div class="row">
+                    <h3 id="i18n_thorax3">Tórax</h3>
+                    <div class="col-xs-6">
+                        <h4 class="min-20" id="i18n_tigermosquito">Mosquito Tigre</h4>
+                        <img class="tutorial-img" src="http://i.imgur.com/PHPuc8l.png">
+                    </div>
+                    <div class="col-xs-6">
+                        <h4 class="min-20" id="i18n_yellowfever2">Mosquito Fiebre Amarilla</h4>
+                        <img class="tutorial-img" src="http://i.imgur.com/hZlv8lr.png" >
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <a id="help3" href="#" class="btn btn-tutorial">
+                    <span id="i18n_understood">¡Entendido!</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="secondnav text-center">
+        <div class="">
+            <!--<a id="close" href="#"><i class="fa fa-times fa-funnel"></i></a>-->
+        </div>
+        <div id="question" class=""></div>
+        <div class="">
+            <a id="info" href="#"><i class="fa fa-info-circle fa-funnel"></i></a>
+        </div>
+    </div>
+    <div class="row skeleton">
+        <div class="col-xs-12 col-sm-6">
+            <!-- Swiper -->
+            <div class="text-center hidden-sm hidden-md hidden-lg">
+                <p id="i18n_zoominfo" class="zoom-info">Toca la imagen para ampliar.</p>
+            </div>
+
+            <div id="stage">
+                <div class="close-icon pull-right"><i class="fa fa-2x fa-fw fa-times-circle-o"></i></div>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper swiper-wrapper-images"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!--
+        <!-- Tiger
+        <div class="col-xs-12 step3 bodyparts tiger torax">
+            <img id="tiger-torax-icon" src="http://i.imgur.com/PHPuc8l.png" class="tutorial-img step3"/>
+        </div> -->
+        <!-- Yellow
+        <div class="col-xs-12 step3 bodyparts yellow torax">
+            <img id="yellow-torax-icon" src="http://i.imgur.com/hZlv8lr.png" class="tutorial-img step3"/>
+        </div>-->
+        <!-- Tiger
+        <div class="col-xs-12 step4 bodyparts tiger abdomen">
+            <img id="tiger-abdomen-icon" src="http://i.imgur.com/8uccfud.png" class="tutorial-img step4"/>
+        </div> -->
+        <!-- Yellow 
+        <div class="col-xs-12 step4 bodyparts yellow abdomen">
+            <img id="yellow-abdomen-icon" src="http://i.imgur.com/9gkaHlD.png" class="tutorial-img step4"/>
+        </div> -->
+        
+
+        <div class="col-xs-12 col-sm-6">
+            <div class="row">
+                <div class="col-xs-12 text-center btnRespuestas">
+                    <button type="button" class="btn btn-success btn-answer step1" value="yes" style="width: 100%;">
+                        <span id="i18n_step1_yes">Sí</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center btnRespuestas">
+                    <button type="button" class="btn btn-danger btn-answer step1" value="no" style="width: 100%;">
+                        <span id="i18n_step1_no">No</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center btnRespuestas">
+                    <button type="button" class="btn btn-warning btn-answer step1" value="unknown" style="width: 100%;">
+                        <span id="i18n_notsurebtn">No lo tengo claro</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center left btnRespuestas">
+                    <!--<button type="button" class="btn btn-white btn-answer step2 step-icon small" value="tiger">-->
+                    <button type="button" class="btn btn-answer step2 btn-primary" value="aedes-invasor">
+                        <!--<img src="http://i.imgur.com/j3ErVjA.png" class="tutorial-img"/>-->
+                        <span id="i18n_tigerbtn" class="no-margin">
+                        Aedes invasor
+                        </span>
+                    </button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center btnRespuestas">
+                    <button type="button" class="btn btn-answer step2 btn-primary" value="culex-comun">
+                        <!--<img src="http://i.imgur.com/XoRAxRg.png" class="tutorial-img"/>-->
+                        <span id="i18n_yellowfeverbtn" class="no-margin">
+                        Culex Mosquito común
+                        </span>
+                    </button>
+                </div>
+                <div class="col-xs-12 btnRespuestas">
+                    <button type="button" class="btn btn-answer step2 btn-warning" value="mosquito-unkown">
+                        <span id="i18n_notsurebtn2">No lo tengo claro</span>
+                    </button>
+                </div>
+                <div class="col-xs-12 btnRespuestas">
+                    <button type="button" class="btn btn-answer step2 btn-danger" value="mosquito-noneofboth">
+                        <span id="i18n_noneofbothbtn">Ninguno de los dos</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 text-center left">
+                    <!-- step 3 -->
+                    <button id="albopictus-torax" type="button" class="btn btn-answer step3 invasor btn-primary torax" value="aedes-albopictus">
+                        <span id="i18n_yesbtn1">Aedes albopictus</span>
+                    </button>
+                    <button id="aegypti-torax" type="button" class="btn btn-answer step3 invasor btn-primary torax" value="aedes-aegypti">
+                        <span id="i18n_yesbtn2">Aedes aegypti</span>
+                    </button>
+                    <button id="japkor-torax" type="button" class="btn step3 invasor btn-answer btn-primary torax" value="aedes-japkor">
+                        <span id="i18n_yesbtn1">Aedes japonicus/koreicus</span>
+                    </button>
+
+                    <!-- step 4 -->
+                    <button id="tiger-abdomen" type="button" class="btn btn-primary step4 japkor btn-answer abdomen" value="aedes-japonicus">
+                        <span id="i18n_yesbtn3">Aedes japonicus</span>
+                    </button>
+                    <button id="yellow-abdomen" type="button" class="btn btn-primary step4 japkor btn-answer abdomen" value="aedes-koreicus">
+                        <span id="i18n_yesbtn4">Aedes koreicus</span>
+                    </button>
+
+                    <!-- step 5 -->
+
+                    <button id="breedingSiteYes" type="button" class="btn btn-success step5 breedingSite btn-answer" value="yes">
+                        <span id="i18n_yesbtn5">Si</span>
+                    </button>
+
+                    <!-- step 6 -->
+
+                    <button id="waterBreedingSiteYes" type="button" class="btn btn-success step6 waterBreedingSite btn-answer" value="yes">
+                        <span id="i18n_yesbtn6">Si</span>
+                    </button>
+                    
+                    <!-- step 7 -->
+                    
+                    <button id="mosquitoLarvesYes" type="button" class="btn btn-success step7 mosquitoLarves btn-answer" value="yes">
+                        <span id="i18n_yesbtn7">Si</span>
+                    </button>
+
+
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                    <!-- step 3 -->
+                    <button id="tiger-torax" type="button" class="btn step3 invasor btn-answer btn-warning torax" value="mosquito-unkown">
+                        <span id="i18n_nobtn1">No lo tengo claro</span>
+                    </button>
+                    <button id="tiger-torax" type="button" class="btn step3 invasor btn-answer btn-danger torax" value="mosquito-noneofboth">
+                        <span id="i18n_nobtn2">Ninguno de ellos</span>
+                    </button>
+                    <!-- step 4 -->
+                    <button id="tiger-abdomen" type="button" class="btn btn-warning step4 japkor btn-answer abdomen" value="mosquito-unkown">
+                        <span id="i18n_nobtn3">No lo tengo claro</span>
+                    </button>
+                    <!--<button id="yellow-abdomen" type="button" class="btn btn-white step4 yellow btn-parts abdomen" value="no"><span id="i18n_nobtn4">No</span></button>-->
+
+                    <!-- step 5 -->
+
+                    <button id="breedingSiteNo" type="button" class="btn btn-white step5 breedingSite btn-answer" value="no">
+                        <span id="i18n_nobtn5">No</span>
+                    </button>
+                    <button id="breedingSiteUnknown" type="button" class="btn btn-white step5 breedingSite btn-answer" value="unknown">
+                        <span id="i18n_notsurebtn5">No lo tengo claro</span>
+                    </button>
+                    
+                    <!-- step 6 -->
+
+                    <button id="waterBreedingSiteNo" type="button" class="btn btn-white step6 waterBreedingSite btn-answer" value="no">
+                        <span id="i18n_nobtn6">No</span>
+                    </button>
+                    <button id="waterBreedingSiteUnknown" type="button" class="btn btn-white step6 waterBreedingSite btn-answer" value="unknown">
+                        <span id="i18n_notsurebtn6">No lo tengo claro</span>
+                    </button>
+
+
+                    <!-- step 7 -->
+
+                    <button id="mosquitoLarvesNo" type="button" class="btn btn-white step7 mosquitoLarves btn-answer" value="no">
+                        <span id="i18n_nobtn7">No</span>
+                    </button>
+                    <button id="mosquitoLarvesUnknown" type="button" class="btn btn-white step7 mosquitoLarves btn-answer" value="unknown">
+                        <span id="i18n_notsurebtn7">No lo tengo claro</span>
+                    </button>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function() {
+
+        // Default language
+        var userLocale = "es";
+        // Translations
+        var messages = {
+            "en": {
+                    "i18n_question1": "Do you see a mosquito in this photo?",
+                    "i18n_easy_right": "It looks easy, right?",
+                    "i18n_tellme": "So tell us if you see a mosquito.",
+                    "i18n_letsgo": "Let's go!",
+                    "i18n_whatmosquito": "What mosquito is it?",
+                    "i18n_wesearch": "We are looking for tiger mosquitoes or yellow fever mosquitoes, but other species can also get in.",
+                    "i18n_nextscreen": "On the next screen we explain how to recognize them.",
+                    "i18n_ok": "OK!",
+                    "i18n_tiger": "Tiger Mosquito",
+                    "i18n_whitestripes": "It is small (<1 cm), black, with horizontal white lines on the abodmen.",
+                    "i18n_whitelinehead": "It has a vertical white line just after the head, in the thorax.",
+                    "i18n_stripedlegs": "Striped legs.",
+                    "i18n_examples": "Examples",
+                    "i18n_thorax": "Thorax",
+                    "i18n_abdomen": "Abdomen",
+                    "i18n_ok2": "OK!",
+                    "i18n_yellowfever": "Yellow Fever Mosquito",
+                    "i18n_smallblackish": "It is small (<1 cm), blackish brown and has horizontal white and wide lines on the abdomen. On each side of these lines there are round white spots.",
+                    "i18n_patternchest": "It has a lyre-shaped pattern just after the head, in the thorax.",
+                    "i18n_stripedlegs2": "Striped legs.",
+                    "i18n_examples2": "Examples",
+                    "i18n_thorax2": "Thorax",
+                    "i18n_abdomen2": "Abdomen",
+                    "i18n_ok3": "OK!",
+                    "i18n_whichparts": "Which parts have you recognized?",
+                    "i18n_markparts": "The most recognisable part of the mosquito is the torax drawing. Do you recognise the drawing in the picture?",
+                    "i18n_tigermosquito": "Tiger Mosquito",
+                    "i18n_thorax3": "Thorax",
+                    "i18n_yellowfever2": "Yellow Fever Mosquito",
+                    "i18n_thorax4": "Thorax",
+                    "i18n_understood": "Understood!",
+                    "i18n_zoominfo": "Touch the picture to enlarge it.",
+                    "i18n_step1_yes": "Yes",
+                    "i18n_step1_no": "No",
+                    "i18n_notsurebtn": "I'm not sure",
+                    "i18n_tigerbtn": "Tiger",
+                    "i18n_yellowfeverbtn": "Yellow fever",
+                    "i18n_notsurebtn2": "I'm not sure",
+                    "i18n_noneofbothbtn": "None of both",
+                    "i18n_yesbtn1": "Yes",
+                    "i18n_yesbtn2": "Yes",
+                    "i18n_yesbtn3": "Yes",
+                    "i18n_yesbtn4": "Yes",
+                    "i18n_nobtn1": "No",
+                    "i18n_nobtn2": "No",
+                    "i18n_nobtn3": "No",
+                    "i18n_nobtn4": "No",
+                    "i18n_nobtn5": "No",
+                    "i18n_notsurebtn5": "I'm not sure",
+                    "i18n_nobtn6": "No",
+                    "i18n_notsurebtn6": "I'm not sure",
+                    "i18n_nobtn7": "No",
+                    "i18n_notsurebtn7": "I'm not sure",
+                    },
+            "ca": {
+                    "i18n_question1": "Veus un mosquit en aquesta foto?",
+                    "i18n_easy_right": "Sembla fàcil, oi?",
+                    "i18n_tellme": "Doncs digue’ns si veus un mosquit.",
+                    "i18n_letsgo": "Som-hi!",
+                    "i18n_whatmosquito": "Quin mosquit podria ser?",
+                    "i18n_wesearch": "Busquem mosquits tigre o de la febre groga, però es poden colar altres espècies.",
+                    "i18n_nextscreen": "A la pròxima pantalla t’expliquem com reconèixer-los.",
+                    "i18n_ok": "D’acord!",
+                    "i18n_tiger": "Mosquit Tigre",
+                    "i18n_whitestripes": "És petit (<1 cm), negre, i amb línees blanques horitzontals a l’abdomen.",
+                    "i18n_whitelinehead": "Té una línea blanca vertical just després del cap, al tòrax.",
+                    "i18n_stripedlegs": "Potes ratllades.",
+                    "i18n_examples": "Exemples",
+                    "i18n_thorax": "Tòrax",
+                    "i18n_abdomen": "Abdomen",
+                    "i18n_ok2": "D’acord!",
+                    "i18n_yellowfever": "Mosquit de la Febre Groga",
+                    "i18n_smallblackish": "És petit (<1 cm), marró tirant a negre, amb línees horitzontals blanques i gruixudes a l’abdomen.",
+                    "i18n_patternchest": "Té un dibuix en forma de lira just després del cap, al tòrax.",
+                    "i18n_stripedlegs2": "Potes ratllades.",
+                    "i18n_examples2": "Exemples",
+                    "i18n_thorax2": "Tòrax",
+                    "i18n_abdomen2": "Abdomen",
+                    "i18n_ok3": "D’acord!",
+                    "i18n_whichparts": "Per quines parts l’has reconegut?",
+                    "i18n_markparts": "Selecciona les parts del mosquit que t’han ajudat a identificar-lo: tòrax o abdomen (o ambdues).",
+                    "i18n_tigermosquito": "Mosquit Tigre",
+                    "i18n_thorax3": "Tòrax",
+                    "i18n_yellowfever2": "Mosquit de la Febre Groga",
+                    "i18n_thorax4": "Tòrax",
+                    "i18n_understood": "Entès!",
+                    "i18n_zoominfo": "Toca la imatge per ampliar-la",
+                    "i18n_step1_yes": "Sí",
+                    "i18n_step1_no": "No",
+                    "i18n_notsurebtn": "No ho sé",
+                    "i18n_tigerbtn": "Tigre",
+                    "i18n_yellowfeverbtn": "Febre Groga",
+                    "i18n_notsurebtn2": "No ho sé",
+                    "i18n_noneofbothbtn": "Cap dels dos",
+                    "i18n_yesbtn1": "Sí",
+                    "i18n_yesbtn2": "Sí",
+                    "i18n_yesbtn3": "Sí",
+                    "i18n_yesbtn4": "Sí",
+                    "i18n_nobtn1": "No",
+                    "i18n_nobtn2": "No",
+                    "i18n_nobtn3": "No",
+                    "i18n_nobtn4": "No",
+                    "i18n_nobtn5": "No",
+                    "i18n_notsurebtn5": "No ho sé",
+                    "i18n_nobtn6": "No",
+                    "i18n_notsurebtn6": "No ho sé",
+                    "i18n_nobtn7": "No",
+                    "i18n_notsurebtn7": "No ho sé",
+                    
+            }
+        };
+
+        // Update userLocale with server side information
+        $(document).ready(function(){
+            // userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
+            // For Spanish only version, setting userLocal to 'es' and doing translation on page ready instead of present task (translation just to avoid changing all text above)
+
+            // parse url parameter
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            };
+
+            // detect browser language (compatible with Chrome, Firefox, Safari and IE10+)
+            var userLang = window.navigator.languages ? window.navigator.languages[0] : null;
+                userLang = userLang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+            if (userLang.indexOf('-') !== -1)
+                userLang = userLang.split('-')[0];
+
+            if (userLang.indexOf('_') !== -1)
+                userLang = userLang.split('_')[0];
+            // url parameter for lang?
+            var urlLang = getUrlParameter('lang');
+            if (urlLang) {
+                userLang = urlLang;
+            }
+            // set language
+            var re = new RegExp("^es.*");
+            if (re.test(userLang)) {
+                userLocale = "es";
+            } else if (userLang === "ca") {
+                userLocale = "ca";
+            } else {
+                userLocale = "en";
+            }
+            $("footer").hide();
+            // Move help containers to top body to get them fully overlayed
+            $('#help1container').insertAfter('body');
+            $('#help2container').insertAfter('body');
+            $('#help2-1container').insertAfter('body');
+            $('#help2-2container').insertAfter('body');
+            $('#help3container').insertAfter('body');
+        });
+
+
+        function toggleVisibility(element) {
+            if (element.css('visibility') === 'hidden') {
+                element.css('visibility', 'visible');
+            }
+            else {
+                element.css('visibility', 'hidden');
+            }
+        }
+
+        function toggleFeaturesText(task) {
+            if ((task.answer.tigerTorax === 'yes') || (task.answer.tigerAbdomen === 'yes')) {
+                $("#none-features").text("Enviar clasificación");
+            }
+            else if ((task.answer.yellowTorax === 'yes') || (task.answer.yellowAbdomen === 'yes')) {
+                $("#none-features").text("Enviar clasificación");
+            }
+            else  {
+                $("#none-features").text("Ninguna de las dos");
+            }
+        }
+
+        function i18n_translate() {
+            // placeholder for more languages
+            console.log(userLocale);
+            if (userLocale !== "es") {
+                var ids = Object.keys(messages[userLocale]);
+                for (i=0; i<ids.length; i++) {
+                    console.log("Translating: " + ids[i]);
+                    if (document.getElementById(ids[i]) != null) {
+                        document.getElementById(ids[i]).innerHTML = messages[userLocale][ids[i]];
+                    }
+                }
+            }
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length,c.length);
+                }
+            }
+            return "";
+        }
+
+        function showHelp(step) {
+            if (step === 'step1') {
+                if (getCookie("mosquitohelp1") != "") {
+                    $(".help-full.help1").hide();
+                }
+                else {
+                    $(".help-full.help1").show();
+                }
+            }
+            else if (step === 'step2') {
+                if (getCookie("mosquitohelp2") != "") {
+                    $(".help-full.help2").hide();
+                }
+                else {
+                    $(".help-full.help2").show();
+                }
+            }
+            else {
+                if (getCookie("mosquitohelp3") != "") {
+                    $(".help-full.help3").hide();
+                }
+                else {
+                    $(".help-full.help3").show();
+                }
+            }
+        }
+
+        $("#help1").off('click').on('click', function(){
+            setCookie("mosquitohelp1", 1, 30);
+            $(".help-full.help1").hide();
+        });
+
+        $("#help2").off('click').on('click', function(){
+            setCookie("mosquitohelp2", 1, 30);
+            $(".help-full.help2").hide();
+            $(".help-full.help2-1").show();
+        });
+        $("#help2-1").off('click').on('click', function(){
+            setCookie("mosquitohelp2-1", 1, 30);
+            $(".help-full.help2-1").hide();
+            $(".help-full.help2-2").show();
+        });
+        $("#help2-2").off('click').on('click', function(){
+            setCookie("mosquitohelp2-2", 1, 30);
+            $(".help-full.help2-2").hide();
+        });
+        $("#help3").off('click').on('click', function(){
+            setCookie("mosquitohelp3", 1, 30);
+            $(".help-full.help3").hide();
+        });
+        
+        pybossa.taskLoaded(function(task, deferred) {
+            if ( !$.isEmptyObject(task) ) {
+                // TODO: Default values?
+                task.answer = { 'user_lang': userLocale,
+                                mosquito: 'unknown',
+                                type: 'unknown',
+                                tigerTorax: 'no',
+                                tigerAbdomen: 'no',
+                                yellowTorax: 'no',
+                                yellowAbdomen: 'no',
+                                }
+
+                task.answer = { 'user_lang': userLocale,
+                                mosquito: 'unknown',
+                                type: 'unknown',
+                                torax: 'no',
+                                legs: 'no',
+                                breedingSite: 'no',
+                                waterBreedingSite: 'no',
+                                mosquitoLarves: 'no',
+                }
+                task.step = 'step1';
+                // load image
+                var img_thumbnail = $('<img />');
+                var img_full = $('<img/>')
+                //img_thumbnail.load(function() {
+                //    // continue as soon as the image is loaded
+                //    deferred.resolve(task);
+                //});
+                var this_turnip = 'q0n50KN2Tg1O0Zh';
+                //var mosquito_server = 'http://webserver.mosquitoalert.com/get_photo/'
+                var mosquito_server = 'http://127.0.0.1:8000/get_photo/'
+                img_thumbnail.attr('src', mosquito_server + this_turnip + '/' + task.info.uuid + '/medium');
+                img_full.attr('src', mosquito_server + this_turnip + '/' + task.info.uuid + '/full');
+                img_thumbnail.css('max-width', '100%');
+                img_full.on('load', function(){
+                    //console.log('My width is: ', this.naturalWidth);
+                    //console.log('My height is: ', this.naturalHeight);
+                    task.width = this.naturalWidth;
+                    task.height = this.naturalHeight;
+
+                    task.extent = [0, 0, task.width, task.height];
+
+                    task.initialResolutions = {};
+                    task.initialCenters= {};
+                    task.zoomed = false;
+
+                    task.projection = new ol.proj.Projection({
+                        code: 'pybossa',
+                        units: 'pixels',
+                        extent: task.extent
+                    });
+                    deferred.resolve(task);
+
+                });
+                task.info.image = img_thumbnail;
+                task.info.image_full = img_full;
+            }
+            else {
+                deferred.resolve(task);
+            }
+        });
+
+        function saveAnswerAndClean(task, deferred) {
+            $(".magnificPopup").magnificPopup('close');
+            $(".step1").hide();
+            $(".step2").hide();
+            $(".step3").hide();
+            $(".step4").hide();
+            $(".step3.tiger").hide();
+            $(".step3.yellow").hide();
+            $(".step4.tiger").hide();
+            $(".step4.yellow").hide();
+            $(".step5").hide();
+            $(".step6").hide();
+            $(".step7").hide();
+            $(".secondnav").removeClass("step1");
+            $(".secondnav").removeClass("step2");
+            $(".secondnav").removeClass("step3");
+            $(".secondnav").removeClass("step4");
+            $(".secondnav").removeClass("step5");
+            $(".secondnav").removeClass("step6");
+            $(".secondnav").removeClass("step7");
+            $(".secondnav").show();
+            pybossa.saveTask(task.id, task.answer).done(function() {
+                // Reset torax and abdomen buttons
+                $("#tiger-torax-icon").css("display", "inline");
+                $("#tiger-torax-icon-check").css("display", "none");
+                $("#tiger-torax-check").css("visibility", "hidden");
+
+                $("#tiger-abdomen-icon").css("display", "inline");
+                $("#tiger-abdomen-icon-check").css("display", "none");
+                $("#tiger-abdomen-check").css("visibility", "hidden");
+
+                $("#yellow-torax-icon").css("display", "inline");
+                $("#yellow-torax-icon-check").css("display", "none");
+                $("#yellow-torax-check").css("visibility", "hidden");
+
+                $("#yellow-abdomen-icon").css("display", "inline");
+                $("#yellow-abdomen-icon-check").css("display", "none");
+                $("#yellow-abdomen-check").css("visibility", "hidden");
+
+                $("#none-features").text("Ninguna de las dos");
+
+                var deleteInstance = true;
+                var cleanupStyles = false;
+                task.swiper.destroy(deleteInstance, cleanupStyles);
+                deferred.resolve();
+            });
+
+        }
+
+        function updateQuestions() {
+            var question1 = $("<h4/>");
+            var question2 = $("<h4/>");
+            var question3 = $("<h4/>");
+            var question4 = $("<h4/>");
+            var question5 = $("<h4/>");
+            var question6 = $("<h4/>");
+            var question7 = $("<h4/>");
+            question1.addClass('step1 animated fadeIn');
+            question2.addClass('step2 animated fadeIn');
+            question3.addClass('step3 animated fadeIn');
+            question4.addClass('step4 animated fadeIn');
+            question5.addClass('step5 animated fadeIn');
+            question6.addClass('step6 animated fadeIn');
+            question7.addClass('step7 animated fadeIn');
+            if (userLocale === 'es') {
+                question1.text('¿Ves un mosquito en esta foto?');
+                question2.text('¿Reconoces que tipo de mosquito podría ser?');
+                question3.text('¿Reconoces el tórax?');
+                question4.text('¿Ves como es el tercer par de patas?');
+                question5.text('¿Ves un lugar donde los mosquitos podrian criar?');
+                question6.text('¿Ves si el sitio tiene agua?');
+                question7.text('¿Ves si hay larvas de mosquito?');
+            } else if (userLocale === 'ca') {
+                question1.text('Veus un mosquit en aquesta foto?');
+                question2.text('Reconeixes quin tipus de mosquit podria ser?');
+                question3.text('Reconeixes el tòrax?');
+                question4.text('Veus com és el tercer parell de potes?');
+                question5.text('Veus un lloc on podrien criar mosquits?');
+                question6.text('Veus si el lloc té aigua?');
+                question7.text('Veus si hi ha larves de mosquit?');
+            } else {    // en
+                question1.text('Do you see a mosquito in this photo?');
+                question2.text('Do you recognise which kind of mosquito could it be?');
+                question3.text('Do you recognize the thorax?');
+                question4.text('Do you see how the third couple of legs are?');
+                question5.text('Do you see where the mosquitos could breed?');
+                question6.text('Do you see if the site has water?');
+                question7.text('Do you see if there are mosquito larvaes?');
+            }
+
+            var mq = window.matchMedia( "(min-width: 768px)" );
+            if (mq.matches) {
+                console.log(">=768");
+                $("#question").html("");
+                $("#question").append(question1);
+                $("#question").append(question2);
+                $("#question").append(question3);
+                $("#question").append(question4);
+                $("#question").append(question5);
+                $("#question").append(question6);
+                $("#question").append(question7);
+                
+            }else{
+                console.log("<768");
+                $("#question").html("");
+                $("#question").append(question1);
+                $("#question").append(question2);
+                $("#question").append(question3);
+                $("#question").append(question4);
+                $("#question").append(question5);
+                $("#question").append(question6);
+                $("#question").append(question7);
+            }
+
+            $(".secondnav").removeClass("step1");
+            $(".secondnav").removeClass("step2");
+            $(".secondnav").removeClass("step3");
+            $(".secondnav").removeClass("step4");
+            $(".secondnav").removeClass("step5");
+            $(".secondnav").removeClass("step6");
+            $(".secondnav").removeClass("step7");
+            $(".step1").show();
+
+        }
+
+        /*$(window).resize(function() {
+            updateQuestions();
+        });*/
+
+        pybossa.presentTask(function(task, deferred) {
+            if ( !$.isEmptyObject(task) ) {
+                $(".swiper-wrapper-images").html("");
+                i18n_translate();
+
+                updateQuestions();
+
+                $("." + task.step).show();
+
+                showHelp(task.step);
+
+                var w = document.documentElement.clientWidth;
+                var h = document.documentElement.clientHeight;
+
+                $("#stage").css("height", "240px");
+                $(".map").css("height", "240px");
+
+                $("body").bind('magnificPopup:open', function(){
+                    console.log("show");
+                    $("#stage").show();
+                    $(".swiper-container").hide();
+                    $(".swiper-pagination").hide();
+                });
+
+                $("body").bind('magnificPopup:close', function(){
+                    console.log("hide");
+                    $("#stage").hide();
+                    $(".swiper-container").show();
+                    $(".swiper-pagination").show();
+                });
+
+
+                $(".close-icon").bind('click', function(){
+                    $(".magnificPopup").magnificPopup('close');
+                });
+
+                $("#info").off('click').on('click', function(){
+                    if (task.step === 'step1') {
+                        $(".help-full.help1").show();
+                    }
+                    else if (task.step === 'step2') {
+                        $(".help-full.help2").show();
+                    }
+                    else {
+                        $(".help-full.help3").show();
+                    }
+                });
+
+                //$("#close").off('click').on('click', function(){
+                //    window.location.replace("http://mosquitoalert.pybossa.com");
+                //});
+
+
+                // for (i=0;i<task.info.images.length;i++) {
+                    var div = $("<div/>");
+                    div.addClass("swiper-slide");
+                    var img = task.info.image.clone();
+                    var a = $("<div/>");
+                    a.attr("id", task.id + "-photo");
+                    a.addClass("map");
+                    a.css("width", "100%");
+                    a.css("height", "240px");
+                    //a.attr("href", task.info.image_full.attr("src"));
+                    //a.addClass("magnifik");
+                    console.log(task.info.image_full.attr("src"));
+                    //img.addClass("magnifik");
+                    //a.append(img)
+                    div.append(a);
+                    //task.map.setTarget(task.id + "-photo");
+                    console.log("Current image extent");
+                    console.log(task.extent);
+                    console.log(task.width);
+                    console.log(task.height);
+                    task.map = new ol.Map({
+                        controls: [], 
+                        layers: [
+                            new ol.layer.Image({
+                            source: new ol.source.ImageStatic({
+                                url: task.info.image_full.attr("src"),
+                                projection: task.projection,
+                                imageExtent: task.extent
+                            })
+                            })
+                        ],
+                        view: new ol.View({
+                            projection: task.projection,
+                            center: ol.extent.getCenter(task.extent),
+                            zoom: 0,
+                            minResolution: 1,
+                            maxResolution: 8,
+                            extent: task.extent
+
+                        })
+                    });
+                    $(".swiper-wrapper-images").append(div);
+                // }
+
+                task.swiper = new Swiper('.swiper-container', {
+                        pagination: '.swiper-pagination',
+                        paginationClickable: true
+                    });
+
+                task.swiper.slideTo(0);
+                task.swiper.update(true);
+
+                task.map.setTarget(task.id + "-photo");
+
+
+                task.initialResolutions[task.id + "-photo"] = task.map.getView().getResolution();
+                task.initialCenters[task.id + "-photo"] = task.map.getView().getCenter();
+
+                task.map.getView().on('propertychange', function(e) {
+                switch (e.key) {
+                    case 'resolution':
+                        var curResolution = e.target.get(e.key);
+                        var currentMap = task.swiper.activeIndex;
+                        var id = task.id + "-photo";
+                        if (curResolution < task.initialResolutions[id]) {
+                            $(".swiper-button-next").hide();
+                            $(".swiper-button-prev").hide();
+                            task.swiper.detachEvents();
+                        }
+                        else {
+                            $(".swiper-button-next").show();
+                            $(".swiper-button-prev").show();
+                            task.swiper.attachEvents();
+                        }
+                        break;
+                }
+                });
+
+                task.map.on('dblclick', function(e){
+                    if (task.zoomed) {
+                        e.preventDefault();
+                        task.zoomed = false;
+                        var tmp = task.initialResolutions[task.id + "-photo"];
+                        e.map.getView().setZoom(0);
+                    }
+                    else {
+                        task.zoomed = true;
+                    }
+                });
+
+                $('.btn-answer.step1').off('click').on('click', function(evt) {
+                    var $btn = $(this);
+                    var answer = $btn.attr("value");
+                    if (typeof answer != 'undefined') {
+
+                        task.answer.mosquito = answer;
+                        console.log("Step 1 completed");
+                        console.log(task.answer);
+                        if (answer === 'yes') {
+                            $(".secondnav").addClass("step2");
+                            task.step = 'step2';
+                            //showHelp(task.step);
+                            $(".step1").hide();
+                            $(".step2").show();
+                            $(".secondnav.step2").css("display", "flex");
+                        } else if (answer === 'no') {
+                            console.log("No es un mosquito");
+                            $(".step1").hide();
+                            $(".step5").show();
+                            $(".secondnav.step5").css("display", "flex");
+                        }
+                        else {
+                            saveAnswerAndClean(task, deferred);
+                        }
+                    }
+                    else {
+                        pybossaNotify('Unexpected type of answer.', true, 'error');
+                    }
+                });
+
+                $(".btn-answer").on("touchstart", function(){
+                    $(this).removeClass("mobileHoverFix");
+                });
+                $(".btn-answer").on("touchend", function(){
+                    $(this).addClass("mobileHoverFix");
+                });
+
+
+                $('.btn-answer.step2').off('click').on('click', function(evt) {
+                    var $btn = $(this);
+                    var answer = $btn.attr("value");
+                    if (typeof answer != 'undefined') {
+
+                        task.answer.type = answer;
+                        console.log("Step 2 completed");
+                        console.log(answer);
+
+                        if (answer === 'aedes-invasor') {
+                            task.step = 'step3';
+                            $(".secondnav").removeClass("step2");
+                            $(".secondnav").addClass("step3");
+                            //showHelp(task.step);
+                            $(".step2").hide();
+                            $(".step3").show();
+                            $(".secondnav.step3").css("display", "flex");
+                            $(".step3.bodyparts.yellow").hide();
+                            $(".step3.bodyparts.yellow.torax").hide();
+                            $(".step3.yellow.btn-parts").hide();
+                            $(".step3.bodyparts.tiger").show();
+                            $(".step3.bodyparts.tiger.torax").show();
+                            $(".step3.tiger.btn-parts").show();
+                            $(".btn-group-answer-bottom").addClass('mini');
+                        /*} else if (answer === 'yellow') {
+                            task.step = 'step3';
+                            $(".secondnav").removeClass("step2");
+                            $(".secondnav").addClass("step3");
+                            //showHelp(task.step);
+                            $(".step2").hide();
+                            $(".step3").show();
+                            $(".secondnav.step3").css("display", "flex");
+                            $(".step3.bodyparts.tiger").hide();
+                            $(".step3.bodyparts.tiger.torax").hide();
+                            $(".step3.tiger.btn-parts").hide();
+                            $(".step3.bodyparts.yellow").show();
+                            $(".step3.bodyparts.yellow.torax").show();
+                            $(".step3.yellow.btn-parts").show();
+                            $(".btn-group-answer-bottom").addClass('mini');*/
+                        } else {
+                            saveAnswerAndClean(task, deferred);
+                        }
+                    }
+                    else {
+                        pybossaNotify('Unexpected type of answer.', true, 'error');
+                    }
+                });
+
+
+                $(".btn-parts").off('click').on('click', function(){
+                    var answer = $(this).attr("value");
+                    console.log(task.answer.type);
+                    console.log($(this).attr("id"));
+                    
+                    if (task.answer.type === 'japkor-torax') {
+                        /*if (($(this).attr("id") === 'tiger-torax') && (answer === 'no')) {
+                            task.answer.tigerTorax = 'no';
+                            saveAnswerAndClean(task, deferred);
+                        }*/
+                        
+                        //if (($(this).attr("id") === 'tiger-torax') && (answer === 'yes')) {
+                            task.answer.torax = 'aedes-japonicus-koreicus';
+                            $(".secondnav").removeClass("step3");
+                            $(".secondnav").addClass("step4");
+                            $(".step3").hide();
+                            $(".step4").show()
+                            $(".step4.tiger").show();
+                            $(".step4.yellow").hide();
+                            task.step = 'step4';
+
+                        //}
+                    }else{
+                        task.answer.tigerAbdomen = 'no';
+                        saveAnswerAndClean(task, deferred);
+
+                    }
+                    
+                    /*if (($(this).attr("id") === 'tiger-abdomen') && (answer === 'no')) {
+                        task.answer.tigerAbdomen = 'no';
+                        saveAnswerAndClean(task, deferred);
+                    }
+                    if (($(this).attr("id") === 'tiger-abdomen') && (answer === 'yes')) {
+                        task.answer.tigerAbdomen = 'yes';
+                        saveAnswerAndClean(task, deferred);
+                    }*/
+                    
+                    
+                    /*if (task.answer.type === 'yellow') {
+                        if (($(this).attr("id") === 'yellow-torax') && (answer === 'no')) {
+                            task.answer.yellowTorax = 'no';
+                            saveAnswerAndClean(task, deferred);
+                        }
+                        if (($(this).attr("id") === 'yellow-torax') && (answer === 'yes')) {
+                            task.answer.yellowTorax = 'yes';
+                            $(".secondnav").removeClass("step3");
+                            $(".secondnav").addClass("step4");
+                            $(".step3").hide();
+                            $(".step4").show()
+                            $(".step4.yellow").show();
+                            $(".step4.tiger").hide();
+                            task.step = 'step4';
+                        }
+
+                        if (($(this).attr("id") === 'yellow-abdomen') && (answer === 'no')) {
+                            task.answer.yellowAbdomen = 'no';
+                            saveAnswerAndClean(task, deferred);
+                        }
+                        if (($(this).attr("id") === 'yellow-abdomen') && (answer === 'yes')) {
+                            task.answer.yellowAbdomen = 'yes';
+                            saveAnswerAndClean(task, deferred);
+                        }
+                    }*/
+                    console.log(task);
+                });
+
+
+                $(".btn-answer").on("touchstart", function(){
+                    $(this).removeClass("mobileHoverFix");
+                });
+                $(".btn-answer").on("touchend", function(){
+                    $(this).addClass("mobileHoverFix");
+                });
+
+                $('.btn-answer.step3').off('click').on('click', function(evt) {
+                    var $btn = $(this);
+                    var answer = $btn.attr("value");
+
+                    
+                    if (typeof answer != 'undefined') {
+
+                        task.answer.torax = answer;
+                        console.log("Step 3 completed");
+                        console.log(task.answer);
+
+
+                        if (answer === 'aedes-japkor') {
+                            task.step = 'step4';
+                            $(".secondnav").removeClass("step2");
+                            $(".secondnav").addClass("step4");
+                            //showHelp(task.step);
+                            $(".step3").hide();
+                            $(".step4").show();
+                            $(".secondnav.step4").css("display", "flex");
+                            $(".step4.bodyparts.yellow").hide();
+                            $(".step4.bodyparts.yellow.torax").hide();
+                            $(".step4.yellow.btn-parts").hide();
+                            $(".step4.bodyparts.tiger").show();
+                            $(".step4.bodyparts.tiger.torax").show();
+                            $(".step4.tiger.btn-parts").show();
+                            $(".btn-group-answer-bottom").addClass('mini');
+                        /*} else if (answer === 'yellow') {
+                            task.step = 'step3';
+                            $(".secondnav").removeClass("step2");
+                            $(".secondnav").addClass("step3");
+                            //showHelp(task.step);
+                            $(".step2").hide();
+                            $(".step3").show();
+                            $(".secondnav.step3").css("display", "flex");
+                            $(".step3.bodyparts.tiger").hide();
+                            $(".step3.bodyparts.tiger.torax").hide();
+                            $(".step3.tiger.btn-parts").hide();
+                            $(".step3.bodyparts.yellow").show();
+                            $(".step3.bodyparts.yellow.torax").show();
+                            $(".step3.yellow.btn-parts").show();
+                            $(".btn-group-answer-bottom").addClass('mini');*/
+                        } else {
+                            saveAnswerAndClean(task, deferred);
+                        }
+                        //saveAnswerAndClean(task, deferred);
+                    }
+                    else {
+                        pybossaNotify('Unexpected type of answer.', true, 'error');
+                    }
+                });
+
+                $(".btn-answer").on("touchstart", function(){
+                    $(this).removeClass("mobileHoverFix");
+                });
+                $(".btn-answer").on("touchend", function(){
+                    $(this).addClass("mobileHoverFix");
+                });
+
+                $('.btn-answer.step4').off('click').on('click', function(evt) {
+                    var $btn = $(this);
+                    var answer = $btn.attr("value");
+                    if (typeof answer != 'undefined') {
+
+                        task.answer.legs = answer;
+                        console.log("Step 3 completed");
+                        console.log(task.answer);
+
+                        saveAnswerAndClean(task, deferred);
+                    }
+                    else {
+                        pybossaNotify('Unexpected type of answer.', true, 'error');
+                    }
+                });
+
+
+                $('.btn-answer.step5').off('click').on('click', function(evt) {
+                    var $btn = $(this);
+                    var answer = $btn.attr("value");
+
+                    if(typeof answer != 'undefined'){
+                        task.answer.breedingSite = answer;
+                        if(answer === 'yes'){
+                            task.step = 'step6';
+                            $(".secondnav").removeClass("step5");
+                            $(".secondnav").addClass("step6");
+                            //showHelp(task.step);
+                            $(".step5").hide();
+                            $(".step6").show();
+                            $(".secondnav.step6").css("display", "flex");
+
+                            console.log("Step 5 completed");
+                            console.log(task.answer);
+                            
+                            
+                        }else if(answer === 'no'){
+                            console.log('no');
+                            saveAnswerAndClean(task, deferred);
+                        
+                        }else if(answer === 'unknown'){
+                            console.log('no lo sé');
+                            saveAnswerAndClean(task, deferred);
+                        }
+
+                    }else {
+                        pybossaNotify('Unexpected type of answer.', true, 'error');
+                    }
+                });
+
+
+
+                $('.btn-answer.step6').off('click').on('click', function(evt) {
+                    var $btn = $(this);
+                    var answer = $btn.attr("value");
+                    if(typeof answer != 'undefined'){
+                        task.answer.waterBreedingSite = answer;
+                        if(answer === 'yes'){
+                            task.step = 'step7';
+                            $(".secondnav").removeClass("step5");
+                            $(".secondnav").addClass("step7");
+                            //showHelp(task.step);
+                            $(".step6").hide();
+                            $(".step7").show();
+                            $(".secondnav.step7").css("display", "flex");
+
+                            console.log("Step 6 completed");
+                            console.log(task.answer);
+                            
+                            
+                        }else if(answer === 'no'){
+                            console.log('no');
+                            saveAnswerAndClean(task, deferred);
+                        
+                        }else if(answer === 'unknown'){
+                            console.log('no lo sé');
+                            saveAnswerAndClean(task, deferred);
+                        }
+                    }else {
+                        pybossaNotify('Unexpected type of answer.', true, 'error');
+                    }
+                });
+
+
+                $('.btn-answer.step7').off('click').on('click', function(evt) {
+                    var $btn = $(this);
+                    var answer = $btn.attr("value");
+                    console.log(answer);
+                    if(typeof answer != 'undefined'){
+                        task.answer.mosquitoLarves = answer;
+                        if(answer === 'yes'){
+                            $(".secondnav").removeClass("step5");
+                            $(".secondnav").addClass("step7");
+                            //showHelp(task.step);
+                            $(".step7").hide();
+                            console.log("Step 6 completed");
+                            console.log(task.answer);
+                            saveAnswerAndClean(task, deferred);
+
+
+                        }else if(answer === 'no'){
+                            console.log('no');
+                            saveAnswerAndClean(task, deferred);
+                        
+                        }else if(answer === 'unknown'){
+                            console.log('no lo sé');
+                            saveAnswerAndClean(task, deferred);
+                        }
+                    }else{
+                        pybossaNotify('Unexpected type of answer.', true, 'error');
+                    }
+                });
+
+
+
+            }
+            else {
+                $(".skeleton").hide();
+                pybossaNotify('You have contributed to all available tasks! Thanks!', true, 'info');
+            }
+        });
+
+        $("#flashalert").hide();
+        $(".navbar-default").hide();
+        $("#back-breadcrumb").hide();
+        pybossa.run('mosquitoAlert');
+
+    })();
+</script>
