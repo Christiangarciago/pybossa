@@ -46,7 +46,7 @@ pybossa/themes/*
 *.bak
 *.orig
 tags
-pybossa/themes/default
+pybossa/themes/default/
 ## Virtual environments
 env/
 env3/
