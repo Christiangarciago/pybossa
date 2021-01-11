@@ -47,6 +47,7 @@ pybossa/themes/*
 *.orig
 tags
 pybossa/themes/default/
+questionsTemplate/taskPresenter.html
 ## Virtual environments
 env/
 env3/
