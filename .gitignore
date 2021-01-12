@@ -46,7 +46,7 @@ pybossa/themes/*
 *.bak
 *.orig
 tags
-
+pybossa/contrib/sentinel.conf
 ## Virtual environments
 env/
 env3/
