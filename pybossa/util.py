@@ -268,10 +268,7 @@ class Pagination(object):
         """Iterate over pages."""
         last = 0
         for num in range(1, self.pages + 1):
-            if (num <= left_edge or
-                    (num > self.page - left_current - 1 and
-                     num < self.page + right_current) or
-                    num > self.pages - right_edge):
+            if (num <= left_edge or (num > self.page - left_current - 1 and num < self.page + right_current) or num > self.pages - right_edge):
                 if last + 1 != num:  # pragma: no cover
                     yield None
                 yield num

@@ -60,9 +60,12 @@ def browse_tasks(project_id, limit=10, offset=0):
                GROUP BY task.id
                ORDER BY task.id ASC LIMIT :limit OFFSET :offset
                ''')
+
     results = session.execute(sql, dict(project_id=project_id,
                                         limit=limit,
                                         offset=offset))
+
+
     tasks = []
     for row in results:
         task = dict(id=row.id, n_task_runs=row.n_task_runs,

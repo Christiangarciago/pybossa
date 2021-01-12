@@ -46,7 +46,12 @@ pybossa/themes/*
 *.bak
 *.orig
 tags
+
 pybossa/contrib/sentinel.conf
+
+pybossa/themes/default/
+questionsTemplate/taskPresenter.html
+
 ## Virtual environments
 env/
 env3/
